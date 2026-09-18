@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>東雲駐屯地 | SHINONOME GARRISON</title>
+<meta name="description" content="東雲駐屯地 — 夜明け前線に立つ有志戦術ユニット。活動記録・隊員紹介・参加案内。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 常時表示の走査線オーバーレイ -->
+<div class="scanline-overlay" aria-hidden="true"></div>
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="20" cy="20" r="5" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>東雲駐屯地</strong>
+        <em>SHINONOME GARRISON</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#overview" data-idx="01">概要</a>
+      <a href="#activity" data-idx="02">活動記録</a>
+      <a href="#members" data-idx="03">隊員紹介</a>
+      <a href="#news" data-idx="04">最新情報</a>
+      <a href="#join" class="nav-cta" data-idx="05">参加案内</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <canvas id="fieldCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-horizon" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-hud" aria-hidden="true">
+    <div class="hud-corner hud-tl"></div>
+    <div class="hud-corner hud-tr"></div>
+    <div class="hud-corner hud-bl"></div>
+    <div class="hud-corner hud-br"></div>
+    <div class="hud-readout hud-left">
+      <span>LAT 34.39N</span>
+      <span>LON 132.45E</span>
+      <span class="hud-blink">STATUS — ACTIVE</span>
+    </div>
+    <div class="hud-readout hud-right">
+      <span>UNIT DESIGNATION</span>
+      <span>SHN-000</span>
+      <span id="hudClock">00:00:00</span>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow-line" data-reveal>
+      <span class="line"></span>兵站再編プロトコル 起動中
+    </p>
+    <h1 class="hero-title" data-reveal>
+      <span class="title-line">東雲駐屯地</span>
+    </h1>
+    <p class="hero-copy" data-reveal>
+      夜が明ける瞬間に、最前線は動き出す。<br class="br-pc">
+      有志によって編成された戦術ユニット、東雲駐屯地。<br class="br-pc">
+      ここに集う者たちの記録を、これから積み重ねていく。
+    </p>
+    <div class="hero-actions" data-reveal>
+      <a href="#overview" class="btn btn-primary">
+        <span>駐屯地を見る</span>
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+      <a href="#join" class="btn btn-ghost"><span>参加案内へ</span></a>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>SCROLL</span>
+    <i></i>
+  </div>
+</section>
+
+<main>
+
+  <!-- ===== OVERVIEW ===== -->
+  <section class="section" id="overview">
+    <div class="section-inner overview-grid">
+      <div class="section-head">
+        <p class="kicker">01 / OVERVIEW</p>
+        <h2>駐屯地について</h2>
+        <p class="lead">
+          東雲駐屯地は、有志によって組織された戦術ユニットです。<br>
+          日々の任務・鍛錬・情報共有を積み重ねながら、
+          それぞれの持ち場で前線を支えています。<br>
+          このページでは、駐屯地の成り立ちと、いま動いている活動を記録していきます。
+        </p>
+        <p class="lead lead-sub">
+          ※ 本文は編集用のサンプルテキストです。実際の活動内容・所属・目的に合わせて書き換えてご利用ください。
+        </p>
+      </div>
+
+      <div class="stat-panel" data-reveal>
+        <div class="stat-panel-head">
+          <span>UNIT DATA</span>
+          <span class="dot-pulse"></span>
+        </div>
+        <dl class="stat-list">
+          <div class="stat-row">
+            <dt>設立</dt>
+            <dd>20XX.XX</dd>
+          </div>
+          <div class="stat-row">
+            <dt>拠点</dt>
+            <dd>未設定</dd>
+          </div>
+          <div class="stat-row">
+            <dt>隊員数</dt>
+            <dd><span class="counter" data-target="12">0</span> 名</dd>
+          </div>
+          <div class="stat-row">
+            <dt>稼働状況</dt>
+            <dd class="status-active">ACTIVE</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACTIVITY ===== -->
+  <section class="section section-alt" id="activity">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="kicker">02 / ACTIVITY LOG</p>
+        <h2>活動記録</h2>
+        <p class="lead">これまでの主な活動を時系列で記録しています。</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item" data-reveal>
+          <span class="timeline-date">20XX.XX.XX</span>
+          <div class="timeline-body">
+            <h3>定例作戦を実施</h3>
+            <p>月例の合同活動を実施。詳細な記録は隊員向けページにて共有。</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal>
+          <span class="timeline-date">20XX.XX.XX</span>
+          <div class="timeline-body">
+            <h3>新規隊員が着任</h3>
+            <p>新たな隊員を迎え、体制を拡充。担当領域の再編を実施した。</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal>
+          <span class="timeline-date">20XX.XX.XX</span>
+          <div class="timeline-body">
+            <h3>拠点整備、完了</h3>
+            <p>活動拠点の環境整備が完了。以降の活動基盤として運用開始。</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal>
+          <span class="timeline-date">20XX.XX.XX</span>
+          <div class="timeline-body">
+            <h3>駐屯地、始動</h3>
+            <p>東雲駐屯地としての活動を正式に開始した。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== MEMBERS ===== -->
+  <section class="section" id="members">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="kicker">03 / MEMBERS</p>
+        <h2>隊員紹介</h2>
+        <p class="lead">駐屯地に所属する隊員たち。コードネームと担当領域を掲載しています。</p>
+      </div>
+
+      <div class="member-grid">
+        <article class="member-card" data-reveal style="--hue:28;">
+          <div class="member-visual"><span>α</span></div>
+          <div class="member-info">
+            <p class="member-role">指揮官</p>
+            <h3>ALPHA</h3>
+            <p class="member-quote">「進むべき方角は、いつも一つとは限らない。」</p>
+          </div>
+        </article>
+        <article class="member-card" data-reveal style="--hue:200;">
+          <div class="member-visual"><span>β</span></div>
+          <div class="member-info">
+            <p class="member-role">斥候</p>
+            <h3>BRAVO</h3>
+            <p class="member-quote">「静けさの中にこそ、次の一手がある。」</p>
+          </div>
+        </article>
+        <article class="member-card" data-reveal style="--hue:340;">
+          <div class="member-visual"><span>γ</span></div>
+          <div class="member-info">
+            <p class="member-role">整備士</p>
+            <h3>CHARLIE</h3>
+            <p class="member-quote">「装備は嘘をつかない。手をかけた分だけ応える。」</p>
+          </div>
+        </article>
+        <article class="member-card" data-reveal style="--hue:150;">
+          <div class="member-visual"><span>δ</span></div>
+          <div class="member-info">
+            <p class="member-role">通信士</p>
+            <h3>DELTA</h3>
+            <p class="member-quote">「情報は、届いて初めて意味を持つ。」</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS ===== -->
+  <section class="section section-alt" id="news">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="kicker">04 / NEWS</p>
+        <h2>最新情報</h2>
+      </div>
+
+      <ul class="news-list">
+        <li data-reveal>
+          <span class="news-date">20XX.XX.XX</span>
+          <span class="news-tag">お知らせ</span>
+          <span class="news-title">駐屯地サイトを公開しました。</span>
+        </li>
+        <li data-reveal>
+          <span class="news-date">20XX.XX.XX</span>
+          <span class="news-tag">活動</span>
+          <span class="news-title">次回の定例活動日程を更新しました。</span>
+        </li>
+        <li data-reveal>
+          <span class="news-date">20XX.XX.XX</span>
+          <span class="news-tag">募集</span>
+          <span class="news-title">新規隊員の募集を開始しました。</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== JOIN ===== -->
+  <section class="section join-section" id="join">
+    <div class="join-panel" data-reveal>
+      <div class="join-frame-corner join-tl"></div>
+      <div class="join-frame-corner join-br"></div>
+      <p class="kicker">05 / JOIN US</p>
+      <h2>共に立つ者を、募集している。</h2>
+      <p class="lead">
+        東雲駐屯地では、共に活動していく仲間を随時募集しています。<br>
+        興味を持たれた方は、まずはお気軽にご連絡ください。
+      </p>
+      <div class="join-actions">
+        <a href="#" class="btn btn-primary">
+          <span>Discordに参加する</span>
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost"><span>お問い合わせ</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="22" height="22">
+          <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </span>
+      <span>東雲駐屯地</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="#overview">概要</a>
+      <a href="#activity">活動記録</a>
+      <a href="#members">隊員紹介</a>
+      <a href="#news">最新情報</a>
+      <a href="#join">参加案内</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
